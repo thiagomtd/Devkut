@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <MainGrid>
       <div className="profileArea" style={{ gridArea: "profileArea" }}>
-        <Box>Teste Daniel</Box>
+        <Box>Imagem</Box>
       </div>
 
       <div className="welcomeArea" style={{ gridArea: "welcomeArea" }}>
