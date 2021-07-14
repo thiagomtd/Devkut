@@ -1,51 +1,71 @@
-import styled from "styled-components";
+import MainGrid from "../src/components/MainGrid";
+import Box from "../src/components/Box";
+import { AlurakutMenu, OrkutNostalgicIconSet } from "../src/lib/AlurakutCommons";
+import { ProfileRelationsBoxWrapper } from "../src/components/ProfileRelations";
 
-const Box = styled.div`
-  background: #ffffff;
-  border-radius: 8px;
-  margin-bottom: 10px;
-`;
+function ProfileSidebar(props) {
+  const githubUserName = "thiagomtd";
 
-const MainGrid = styled.main`
-  width: 100%;
-  grid-gap: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 500px;
-  padding: 16px;
-  .profileArea {
-    display: none;
-    @media (min-width: 860px) {
-      display: block;
-    }
-  }
-
-  @media (min-width: 860px) {
-    max-width:1110px;
-    display: grid;
-    grid-template-areas: "profileArea welcomeArea profileRelationsArea";
-    grid-template-columns: 160px 1fr 312px;
-  }
-`;
+  return (
+    <Box>
+      <img
+        src={`https://github.com/${props.githubUserName}.png`}
+        alt="Imagem de perfil "
+        style={{ borderRadius: "8px" }}
+      />
+    </Box>
+  );
+}
 
 export default function Home() {
+  const githubUserName = "thiagomtd";
+  const pessoasFavoritas = [
+    "juunegreiros",
+    "omariosouto",
+    "peas",
+    "rafaballerini",
+    "marcobrunodev",
+    "felipefialho",
+  ];
+
   return (
-    <MainGrid>
-      <div className="profileArea" style={{ gridArea: "profileArea" }}>
-        <Box>Imagem</Box>
-      </div>
+    <>
+      <AlurakutMenu />
+      <MainGrid>
+        <div className="profileArea" style={{ gridArea: "profileArea" }}>
+          <ProfileSidebar githubUserName={githubUserName} />
+        </div>
 
-      <div className="welcomeArea" style={{ gridArea: "welcomeArea" }}>
-        <Box>Bem vindo</Box>
-      </div>
+        <div className="welcomeArea" style={{ gridArea: "welcomeArea" }}>
+          <Box className="title">
+            <h1>Bem vindo(a)</h1>
+            <OrkutNostalgicIconSet/>
+          </Box>
+        </div>
 
-      <div
-        className="profileRelationsArea"
-        style={{ gridArea: "profileRelationsArea" }}
-      >
-        <Box>Pessoas da comunidade</Box>
-        <Box>Comunidades</Box>
-      </div>
-    </MainGrid>
+        <div
+          className="profileRelationsArea"
+          style={{ gridArea: "profileRelationsArea" }}
+        >
+          <ProfileRelationsBoxWrapper>
+            <h2 className="smallTitle">
+              Pessoas da Comunidade ({pessoasFavoritas.length})
+            </h2>
+            <ul>
+              {pessoasFavoritas.map((itemAtual) => {
+                return (
+                  <li>
+                    <a href={`/user/${itemAtual}`} key={itemAtual}>
+                      <img src={`https://github.com/${itemAtual}.png`} />
+                      <span>{itemAtual}</span>
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </ProfileRelationsBoxWrapper>
+        </div>
+      </MainGrid>
+    </>
   );
 }

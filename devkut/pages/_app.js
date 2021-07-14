@@ -1,5 +1,5 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { AlurakutStyles } from '../src/lib/AlurakutCommons'
 const theme = {
   colors: {
     primary: "#0070f3",
@@ -27,9 +27,16 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     flex-direction: column;
   }
+
+  img{
+    max-width:100%;
+    height: auto;
+    display:block;
+  }
+
+  ${AlurakutStyles}
+
 `;
-
-
 
 export default function App({ Component, pageProps }) {
   return (
