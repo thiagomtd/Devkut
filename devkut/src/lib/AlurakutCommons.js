@@ -78,6 +78,7 @@ AlurakutMenu.Wrapper = styled.header`
     @media (min-width: 860px) {
       display: none;
     }
+    
     > div {
       max-width: 400px;
       margin: auto;
@@ -180,7 +181,7 @@ function AlurakutMenuProfileSidebar({ githubUser }) {
       <div>
         <img
           src={`https://github.com/${githubUser}.png`}
-          style={{ borderRadius: "8px" }}
+          style={{ borderRadius: "8px", width:"150px", height: "150px"}}
         />
         <hr />
         <p>
