@@ -35,7 +35,12 @@ function ProfileSidebar(props) {
 export default function Home() {
   const githubUserName = "thiagomtd";
   const [comunidades, setComunidades] = useState([
-    
+    {
+      id: "46546546",
+      title: "Entra ai",
+      image: "https://a.rgbimg.com/users/h/hi/hisks/300/mhYj2Cc.jpg",
+      link: "https://www.youtube.com/watch?v=jhfxgzmbQY8",
+    },
   ]);
 
   const pessoasFavoritas = [
