@@ -1,5 +1,16 @@
 {
   "cSpell.words": [
-    "Comunidades"
-  ]
+    "Ainda",
+    "Alurakut",
+    "Comunidade",
+    "Comunidades",
+    "Thiagomtd",
+    "nada",
+    "temos"
+  ],
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "scssFormatter.singleQuote": true
 }

@@ -204,13 +204,16 @@ export function AlurakutProfileSidebarMenuDefault() {
   return (
     <AlurakutProfileSidebarMenuDefault.Wrapper>
       <nav>
-        <a href="/">
+        <a
+          target="_blank"
+          href="https://github.com/thiagomtd?Subject=Título%20da%20mensagem"
+        >
           <img src={`${BASE_URL}/icons/user.svg`} />
-          Perfil
+          Perfil GitHub
         </a>
-        <a href="/">
+        <a target="_blank" href="mailto:thiagomtd2@gmail.com">
           <img src={`${BASE_URL}/icons/book.svg`} />
-          Recados
+          E-mail
         </a>
         <a href="/">
           <img src={`${BASE_URL}/icons/camera.svg`} />
