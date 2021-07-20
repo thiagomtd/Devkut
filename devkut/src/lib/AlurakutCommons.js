@@ -8,7 +8,9 @@ const v = "1";
 function Link({ href, children, ...props }) {
   return (
     <NextLink href={href} passHref>
-      <a {...props}>{children}</a>
+      <a {...props}>
+        {children}
+      </a>
     </NextLink>
   );
 }
@@ -20,29 +22,34 @@ export function AlurakutMenu({ githubUser }) {
   const [isMenuOpen, setMenuState] = React.useState(false);
   return (
     <AlurakutMenu.Wrapper isMenuOpen={isMenuOpen}>
-      <div className="container">
+      <div className='container'>
         <AlurakutMenu.Logo src={`${BASE_URL}/logo.svg`} />
 
         <nav style={{ flex: 1 }}>
-          {[
-            { name: "Inicio", slug: "/" },
-            { name: "Amigos", slug: "/amigos" },
-            { name: "Comunidades", slug: "/comunidades" },
-          ].map((menuItem) => (
-            <Link
-              key={`key__${menuItem.name.toLocaleLowerCase()}`}
-              href={`${menuItem.slug.toLocaleLowerCase()}`}
-            >
-              {menuItem.name}
-            </Link>
-          ))}
+          <Link key={`Inicio`} href={`/devkut`}>
+            Inicio
+          </Link>
+          <Link
+            target='blank'
+            key={`Seguidores`}
+            href={`https://github.com/${githubUser}?tab=followers`}
+          >
+            Seguidores
+          </Link>
+          <Link
+            target='blank'
+            key={`Repositorio`}
+            href={`https://github.com/${githubUser}?tab=repositories`}
+          >
+            Repositorio
+          </Link>
         </nav>
 
         <nav>
           <div>
-            <input placeholder="Pesquisar no Devkut" />
+            <input placeholder='Pesquisar no Devkut' />
           </div>
-          <a href={`/logout`}>Sair</a>
+          <a href={`/`}>Sair</a>
         </nav>
 
         <button onClick={() => setMenuState(!isMenuOpen)}>
@@ -208,30 +215,8 @@ export function AlurakutProfileSidebarMenuDefault(props) {
           <img src={`${BASE_URL}/icons/user.svg`} />
           Perfil GitHub
         </a>
-        <a target='_blank' href='mailto:thiagomtd2@gmail.com'>
-          <img src={`${BASE_URL}/icons/book.svg`} />
-          E-mail
-        </a>
-        <a href='/'>
-          <img src={`${BASE_URL}/icons/camera.svg`} />
-          Fotos
-        </a>
-        <a href='/'>
-          <img src={`${BASE_URL}/icons/sun.svg`} />
-          Depoimentos
-        </a>
       </nav>
-      <hr />
-      <nav>
-        <a href='/'>
-          <img src={`${BASE_URL}/icons/plus.svg`} />
-          GitHub Trends
-        </a>
-        <a href='/logout'>
-          <img src={`${BASE_URL}//icons/logout.svg`} />
-          Sair
-        </a>
-      </nav>
+      
     </AlurakutProfileSidebarMenuDefault.Wrapper>
   );
 }
@@ -252,9 +237,9 @@ AlurakutProfileSidebarMenuDefault.Wrapper = styled.div`
   }
 `;
 
-// ================================================================================================================
+//==========================================================================================
 // OrkutNostalgicIconSet
-// ================================================================================================================
+//==========================================================================================
 export function OrkutNostalgicIconSet(props) {
   return (
     <OrkutNostalgicIconSet.List>

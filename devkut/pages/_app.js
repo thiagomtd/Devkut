@@ -33,9 +33,6 @@ const GlobalStyle = createGlobalStyle`
     height: auto;
     display:block;
   }
-
-  
-
   ${AlurakutStyles}
 
 `;
