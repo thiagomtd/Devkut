@@ -204,33 +204,30 @@ export function AlurakutProfileSidebarMenuDefault() {
   return (
     <AlurakutProfileSidebarMenuDefault.Wrapper>
       <nav>
-        <a
-          target="_blank"
-          href="https://github.com/thiagomtd?Subject=Título%20da%20mensagem"
-        >
+        <a target='_blank' href={`https://github.com/thiagomtd`}>
           <img src={`${BASE_URL}/icons/user.svg`} />
           Perfil GitHub
         </a>
-        <a target="_blank" href="mailto:thiagomtd2@gmail.com">
+        <a target='_blank' href='mailto:thiagomtd2@gmail.com'>
           <img src={`${BASE_URL}/icons/book.svg`} />
           E-mail
         </a>
-        <a href="/">
+        <a href='/'>
           <img src={`${BASE_URL}/icons/camera.svg`} />
           Fotos
         </a>
-        <a href="/">
+        <a href='/'>
           <img src={`${BASE_URL}/icons/sun.svg`} />
           Depoimentos
         </a>
       </nav>
       <hr />
       <nav>
-        <a href="/">
+        <a href='/'>
           <img src={`${BASE_URL}/icons/plus.svg`} />
           GitHub Trends
         </a>
-        <a href="/logout">
+        <a href='/logout'>
           <img src={`${BASE_URL}//icons/logout.svg`} />
           Sair
         </a>
