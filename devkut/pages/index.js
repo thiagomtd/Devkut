@@ -18,12 +18,16 @@ function ProfileSidebar(props) {
       />
       <hr />
       <p>
-        <a className='boxLink' target='_blank' href={`https://github.com/${props.githubUser}`}>
+        <a
+          className='boxLink'
+          target='_blank'
+          href={`https://github.com/${props.githubUser}`}
+        >
           @{props.githubUser}
         </a>
       </p>
       <hr />
-      <AlurakutProfileSidebarMenuDefault />
+      <AlurakutProfileSidebarMenuDefault githubUser={props.githubUser} />
     </Box>
   );
 }
