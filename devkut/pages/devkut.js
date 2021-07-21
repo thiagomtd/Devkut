@@ -43,7 +43,7 @@ function ProfileRelationsBox(props) {
         {props.title} ({props.items.length})
       </h2>
       <ul>
-        {props.items.map((itemAtual) => {
+        {props.items.slice(0,6).map((itemAtual) => {
           return (
             <li key={itemAtual.login}>
               <a target='blank' href={`https://github.com/${itemAtual.login}`}>
@@ -65,7 +65,7 @@ function ProfileFollowing(props) {
         {props.title} ({props.items.length})
       </h2>
       <ul>
-        {props.items.map((itemAtual) => {
+        {props.items.slice(0,6).map((itemAtual) => {
           return (
             <li key={itemAtual.login}>
               <a target='blank' href={`https://github.com/${itemAtual.login}`}>
@@ -217,14 +217,16 @@ export default function Home(props) {
           <ProfileRelationsBox title='Seguidores' items={seguidores} />
           <ProfileFollowing title='Seguindo' items={seguindo} />
           <ProfileRelationsBoxWrapper>
-            <h2 className='smallTitle'>Repositorios</h2>
+            <h2 className='smallTitle'>Repositorios ({repositorio.length})</h2>
             <ul>
-              {repositorio.map((itemAtual) => {
+              {repositorio.slice(0, 6).map((itemAtual) => {
                 return (
                   <li key={itemAtual.id}>
                     <a target='blank' href={itemAtual.html_url}>
                       <img
-                        src={'https://github.githubassets.com/images/modules/logos_page/Octocat.png'}
+                        src={
+                          'https://github.githubassets.com/images/modules/logos_page/Octocat.png'
+                        }
                       />
                       <span>{itemAtual.name}</span>
                     </a>
@@ -242,7 +244,7 @@ export default function Home(props) {
                     Projetos em destaque ({projetos.length})
                   </h2>
                   <ul>
-                    {projetos.map((itemAtual) => {
+                    {projetos.slice(0, 6).map((itemAtual) => {
                       return (
                         <li key={itemAtual.id}>
                           <a target='blank' href={itemAtual.pageLink}>
