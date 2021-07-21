@@ -22,6 +22,10 @@ const Box = styled.div`
     font-weight: 400;
     margin-bottom: 20px;
   }
+  a{
+    color: #000;
+    text-decoration: none;
+  }
   .smallTitle {
     margin-bottom: 20px;
     font-size: 16px;

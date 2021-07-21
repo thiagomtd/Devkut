@@ -91,6 +91,7 @@ AlurakutMenu.Wrapper = styled.header`
       margin: auto;
     }
     a {
+      
       font-size: 18px;
     }
     .boxLink {
@@ -138,6 +139,7 @@ AlurakutMenu.Wrapper = styled.header`
         display: flex;
       }
       a {
+        
         font-size: 12px;
         color: white;
         padding: 10px 16px;
@@ -222,6 +224,7 @@ export function AlurakutProfileSidebarMenuDefault(props) {
 }
 AlurakutProfileSidebarMenuDefault.Wrapper = styled.div`
   a {
+    
     font-size: 12px;
     color: #2e7bb4;
     margin-bottom: 16px;
@@ -435,6 +438,7 @@ const AlurakutLoginScreen = css`
           font-size: 14px;
         }
         a {
+          
           text-decoration: none;
           color: var(--colorPrimary);
         }
@@ -469,6 +473,7 @@ const AlurakutLoginScreen = css`
         font-size: 12px;
         text-align: center;
         a {
+          
           text-decoration: none;
           color: var(--colorPrimary);
         }

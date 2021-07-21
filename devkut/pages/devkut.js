@@ -40,10 +40,15 @@ function ProfileRelationsBox(props) {
   return (
     <ProfileRelationsBoxWrapper>
       <h2 className='smallTitle'>
-        {props.title} ({props.items.length})
+        <a
+          target='blank'
+          href={`https://github.com/${props.githubUser}?tab=followers`}
+        >
+          {props.title} ({props.items.length})
+        </a>
       </h2>
       <ul>
-        {props.items.slice(0,6).map((itemAtual) => {
+        {props.items.slice(0, 6).map((itemAtual) => {
           return (
             <li key={itemAtual.login}>
               <a target='blank' href={`https://github.com/${itemAtual.login}`}>
@@ -62,10 +67,12 @@ function ProfileFollowing(props) {
   return (
     <ProfileRelationsBoxWrapper>
       <h2 className='smallTitle'>
-        {props.title} ({props.items.length})
+        <a target='blank' href={`https://github.com/${props.githubUser}?tab=following`}>
+          {props.title} ({props.items.length})
+        </a>
       </h2>
       <ul>
-        {props.items.slice(0,6).map((itemAtual) => {
+        {props.items.slice(0, 6).map((itemAtual) => {
           return (
             <li key={itemAtual.login}>
               <a target='blank' href={`https://github.com/${itemAtual.login}`}>
@@ -214,10 +221,26 @@ export default function Home(props) {
           className='profileRelationsArea'
           style={{ gridArea: 'profileRelationsArea' }}
         >
-          <ProfileRelationsBox title='Seguidores' items={seguidores} />
-          <ProfileFollowing title='Seguindo' items={seguindo} />
+          <ProfileRelationsBox
+            title='Seguidores'
+            items={seguidores}
+            githubUser={githubUser}
+          />
+          <ProfileFollowing
+            title='Seguindo'
+            items={seguindo}
+            githubUser={githubUser}
+          />
           <ProfileRelationsBoxWrapper>
-            <h2 className='smallTitle'>Repositorios ({repositorio.length})</h2>
+            <h2 className='smallTitle'>
+              <a
+                target='blank'
+                href={`https://github.com/${githubUser}?tab=repositories`}
+              >
+                Repositorios
+              ({repositorio.length})
+              </a>
+            </h2>
             <ul>
               {repositorio.slice(0, 6).map((itemAtual) => {
                 return (
